@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>مختبر الخوارزميات التفاعلي</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>مختبر <span>الخوارزميات</span> التفاعلي</h1>
+        <p>Dynamic Programming &amp; Pathfinding</p>
+        <nav>
+            <button class="tab on" data-t="p1">١ · مقارنة النصوص (LCS / Edit Distance)</button>
+            <button class="tab" data-t="p2">٢ · أقصر مسار (Dijkstra / A*)</button>
+        </nav>
+    </header>
+    <main>
+        <section id="p1" class="panel show">
+            <div class="card row">
+                <label>النص الأول <input class="in" id="sa" value="kitten" dir="ltr" maxlength="12"></label>
+                <label>النص الثاني <input class="in" id="sb" value="sitting" dir="ltr" maxlength="12"></label>
+                <div class="chips">
+                    <button class="chip" data-a="kitten" data-b="sitting">kitten / sitting</button>
+                    <button class="chip" data-a="algorithm" data-b="logarithm">algorithm / logarithm</button>
+                    <button class="chip" data-a="sunday" data-b="saturday">sunday / saturday</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="seg">
+                    <button class="seg-b on" data-m="lcs">LCS</button>
+                    <button class="seg-b" data-m="edit">Edit Distance</button>
+                </div>
+                <div class="ctl" id="c1"></div>
+                <div class="legend"><span class="k cur"></span>الخلية الحالية <span class="k dep"></span>الخلايا المعتمد
+                    عليها <span class="k path"></span>مسار الرجوع</div>
+                <div class="mx" id="mx"></div>
+                <div class="explain" id="ex1"></div>
+            </div>
+            <div class="cols" id="sum1"></div>
+        </section>
+        <section id="p2" class="panel">
+            <div class="card">
+                <div class="chips">
+                    <button class="tl on" data-t="wall">⬛ جدار</button>
+                    <button class="tl" data-t="weight">🟫 تضاريس (5)</button>
+                    <button class="tl" data-t="erase">🧽 مسح</button>
+                    <button class="tl" data-t="start">S بداية</button>
+                    <button class="tl" data-t="goal">G هدف</button>
+                    <button id="bPre">مثال جاهز</button>
+                    <button id="bRnd">متاهة عشوائية</button>
+                    <button id="bClr">مسح الكل</button>
+                    <label><input type="checkbox" id="chk"> إظهار القيم (g / h / f)</label>
+                </div>
+                <div class="ctl" id="c2"></div>
+                <div class="grids">
+                    <div>
+                        <h3>Dijkstra — g(n)</h3>
+                        <div class="g" id="gd"></div>
+                    </div>
+                    <div>
+                        <h3>A* — f(n)=g(n)+h(n)</h3>
+                        <div class="g" id="ga"></div>
+                    </div>
+                </div>
+                <div class="legend"><span class="k s"></span>S <span class="k gl"></span>G <span
+                        class="k op"></span>حدود البحث <span class="k cl"></span>مُستكشَفة <span
+                        class="k cu"></span>الحالية <span class="k pa"></span>المسار الأمثل</div>
+                <div class="explain" id="ex2"></div>
+            </div>
+            <div class="card">
+                <h3>لوحة المقارنة</h3>
+                <table class="dash" id="dash"></table>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
